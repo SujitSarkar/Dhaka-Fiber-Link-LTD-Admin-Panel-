@@ -173,6 +173,7 @@ class SidebarContentBuilder extends StatelessWidget {
         onTap: () {
           publicProvider.subCategory = title;
           publicProvider.category = '';
+          if (size.width < 1300) Navigator.pop(context);
         },
         child: Text(title,
             style: TextStyle(
@@ -197,6 +198,7 @@ class NavigationDrawer extends StatelessWidget {
           elevation: 0.0,
           child: Container(
             width: size.width < 1300 ? 0.0 : size.width * .15,
+            height: size.height,
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
@@ -208,6 +210,7 @@ class NavigationDrawer extends StatelessWidget {
                 )
             ),
             child: ListView(
+              scrollDirection: Axis.vertical,
               children: [
                 SidebarContentBuilder(title: 'Dashboard'),
                 SidebarContentBuilder(title: 'Add New Customer'),

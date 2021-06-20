@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:new_dish_admin_panlel/main_page.dart';
 import 'package:new_dish_admin_panlel/provider/public_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart' as firebase_core;
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  firebase_core.Firebase.initializeApp();
   runApp(MyApp());
 }
 

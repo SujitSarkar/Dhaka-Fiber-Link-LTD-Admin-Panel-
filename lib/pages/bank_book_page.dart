@@ -282,7 +282,7 @@ class _BankBookPageState extends State<BankBookPage> with SingleTickerProviderSt
   Widget _textBuilder(Size size, String hint){
     return TextField(
       controller: hint=='Account Name'
-          ?_accNumber
+          ?_accName
           : hint=='Account Number'
           ?_accNumber
           : hint=='Debit'
